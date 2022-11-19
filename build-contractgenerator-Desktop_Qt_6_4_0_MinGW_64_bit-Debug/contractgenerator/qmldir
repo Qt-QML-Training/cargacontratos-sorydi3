@@ -1,0 +1,4 @@
+module contractgenerator
+typeinfo appcontractgenerator.qmltypes
+prefer :/contractgenerator/
+

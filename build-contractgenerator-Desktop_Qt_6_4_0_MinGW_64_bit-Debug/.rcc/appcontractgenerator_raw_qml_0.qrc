@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/contractgenerator/">
+    <file alias="main.qml">C:/Qt/contract_Generator/cargacontratos-sorydi3/contractgenerator/main.qml</file>
+  </qresource>
+</RCC>
+
