@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/contractgenerator/">
+    <file alias="main.qml">C:/Qt/contract_Generator/cargacontratos-sorydi3/contractgenerator/main.qml</file>
+    <file alias="LabelInput.qml">C:/Qt/contract_Generator/cargacontratos-sorydi3/contractgenerator/LabelInput.qml</file>
+  </qresource>
+</RCC>
+
