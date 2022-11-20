@@ -1,0 +1,113 @@
+[
+    {
+        "classes": [
+            {
+                "className": "FileReader",
+                "methods": [
+                    {
+                        "access": "public",
+                        "name": "getLabels",
+                        "returnType": "QList<QString>"
+                    },
+                    {
+                        "access": "public",
+                        "name": "readFile",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "arrInputText",
+                                "type": "QList<QString>"
+                            }
+                        ],
+                        "name": "generatePdf",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "openFile",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "closeFile",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filename",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "displayPdf",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "arguments": [
+                            {
+                                "name": "filename",
+                                "type": "QString"
+                            }
+                        ],
+                        "name": "guardar",
+                        "returnType": "void"
+                    }
+                ],
+                "object": true,
+                "properties": [
+                    {
+                        "constant": false,
+                        "designable": true,
+                        "final": false,
+                        "index": 0,
+                        "name": "filename",
+                        "notify": "filenameChanged",
+                        "read": "getFilename",
+                        "required": false,
+                        "scriptable": true,
+                        "stored": true,
+                        "type": "QString",
+                        "user": false,
+                        "write": "setFilename"
+                    }
+                ],
+                "qualifiedClassName": "FileReader",
+                "signals": [
+                    {
+                        "access": "public",
+                        "name": "finishFileRead",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "filenameChanged",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "fileopened",
+                        "returnType": "void"
+                    },
+                    {
+                        "access": "public",
+                        "name": "fileSaved",
+                        "returnType": "void"
+                    }
+                ],
+                "superClasses": [
+                    {
+                        "access": "public",
+                        "name": "QObject"
+                    }
+                ]
+            }
+        ],
+        "inputFile": "filereader.h",
+        "outputRevision": 68
+    }
+]

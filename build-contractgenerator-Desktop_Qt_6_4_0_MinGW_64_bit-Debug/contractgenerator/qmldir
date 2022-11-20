@@ -1,4 +1,5 @@
 module contractgenerator
 typeinfo appcontractgenerator.qmltypes
 prefer :/contractgenerator/
+LabelInput 1.0 LabelInput.qml
 
