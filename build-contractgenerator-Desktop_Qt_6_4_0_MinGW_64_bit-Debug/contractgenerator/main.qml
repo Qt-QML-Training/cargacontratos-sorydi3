@@ -3,7 +3,6 @@ import QtQuick.Controls
 
 import QtQuick.Dialogs
 
-
 import module.reader
 
 
@@ -21,6 +20,8 @@ ApplicationWindow  {
     property var textInputarr; // hold text input texts
 
     property var urlSavedFile;
+
+    property string info;
 
     //file reader instance
     MyFileReader{
@@ -49,24 +50,17 @@ ApplicationWindow  {
 
         onFileSaved: {
            console.log("file generated succefuly");
-
+            timer.start();
         }
 
     }
 
 
-
-
-
-
-
     ListModel{
         id:listModel
-    }
+}
 
     //this is the menu bar
-
-
     menuBar: MenuBar {
         Menu{
           title: qsTr("&File")
@@ -96,28 +90,11 @@ ApplicationWindow  {
         }
     }
 
-    /*
-    MessageDialog{
-        id: fileGenerated
-
-        text: "File generated Correctly"
-
-        onAccept: {
-            fileGenerated.close()
+    footer: ToolBar{
+        Text {
+            id: textToolBart
         }
-
-        onCancelClicked: {
-
-            fileGenerated.close()
-
-        }
-
-
     }
-
-    */
-
-
 
 
     FileDialog {
@@ -157,11 +134,13 @@ ApplicationWindow  {
 
     }
 
-
-    //this is the main rectangle it fill the whole window
     Rectangle {
+        id:idMainRectangle
         anchors.fill: parent
-        color: backgroundColor
+        gradient: Gradient {
+               GradientStop { position: 0.0; color: "#f6f6f6" }
+               GradientStop { position: 1.0; color: "#d7d7d7" }
+           }
         ListView{
             id:listView
             visible: false
@@ -169,13 +148,12 @@ ApplicationWindow  {
             anchors.centerIn: parent
             anchors.leftMargin: 10
             spacing: 10
+            clip: true
             anchors.rightMargin: 10
-            //model: ["label1","label2","label3","label4","label5","label6"]
             delegate: LabelInput {
                 textLabel: label
                 inputText: ""
                 onTextInputChanged:(textt)=>{
-                    console.log("texttttt passsed----------->" + textt +"-->"+index)
                     model.inputTextt=textt;
                 }
             }
@@ -223,9 +201,8 @@ ApplicationWindow  {
                     print(ventana.urlSavedFile)
                     if(ventana.urlSavedFile){
                         print("displaying pdf...")
-                      fileReader.displayPdf(ventana.urlSavedFile)
+                        fileReader.displayPdf(ventana.urlSavedFile)
                     }
-
                 }
             }
         }
@@ -243,4 +220,19 @@ ApplicationWindow  {
         print(JSON.stringify(arr));
     }
 
+    Timer{
+
+        id: timer
+
+        repeat: false
+        running: false
+
+        interval: 1000
+
+        onTriggered: {
+
+            textToolBart.text = "File saved in the following path:" + urlSavedFile.split("///")[1]
+
+        }
+    }
 }

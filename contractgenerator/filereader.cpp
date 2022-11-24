@@ -14,14 +14,10 @@ void FileReader::readFile()
    QString auxText(file.readAll());
    arrText = auxText.split("###");
 
-   int i = 0;
-   if (!arrText.startsWith("###"))
-       i = 1;
+   int i = 1;
    begin = i;
-
    for (; i < arrText.length(); i += 2)
    {
-       //qDebug() << arrText[i].toLower().trimmed().replace(" ", "");
 
        if (begin > 0)
        {
@@ -49,7 +45,6 @@ void FileReader::generatePdf(QVector<QString> arrInputText)
         }
 
          html +="</p>";
-
 }
 
 
@@ -102,8 +97,6 @@ QMap<QString,QString> FileReader::mapLabelsToInputs(QVector<QString> arrInputTex
 void FileReader::guardar(const QString &filename)
 
 {
-
-    qDebug() <<"saving file with name..."+filename;
 
     QString str = filename.split("///")[1].replace("/","\\");
 

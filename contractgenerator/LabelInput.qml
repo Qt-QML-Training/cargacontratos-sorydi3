@@ -8,7 +8,11 @@ import QtQuick
         signal textInputChanged(text:string);
          width: parent.width
          height: 80
-         color: itemColor
+        // color: itemColor
+         gradient: Gradient {
+                GradientStop { position: 0.0; color: "#f6f6f6" }
+                GradientStop { position: 1.0; color: itemColor }
+            }
          anchors.margins: 10
          radius: 10
          id:containerlabeText
@@ -34,7 +38,7 @@ import QtQuick
                    centerIn: parent
                }
 
-               border.color: "black"
+               border.color: Qt.lighter(itemColor,1.1)
                radius: 5
 
                TextInput{
